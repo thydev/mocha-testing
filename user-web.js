@@ -6,6 +6,7 @@ var data = require('./user-data');
 var app = module.exports = new koa();
 
 router.get('/user', function* () {
+    console.log(data);
     this.body = yield data.users.get();
 });
 

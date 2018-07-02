@@ -11,8 +11,9 @@ before(function* () {
 
 describe('user data', function () {
     it('should have +1 user count after saving', function* () {
+
         var users = yield data.users.get();
-        // console.log(users);
+
 
         yield data.users.save({
             name: 'John'
@@ -26,8 +27,9 @@ describe('user data', function () {
 
 describe('user web', function () {
     it('should have +1 user count after saving', function* () {
+        console.log('inside????')
         var res = yield request.get('/user').expect(200).end();
-
+        console.log(res, 'uuuuuuuu')
         var users = res.body;
 
         yield data.users.save({
